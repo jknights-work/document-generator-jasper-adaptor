@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  File      : jasper-service.xml
+  Author    : cmartin
+  Copyright : Martin Technical Consulting Limited Ltd (2018)
+  Created   : 21-Jan-2018
+
+  History
+    21-Jan-2018 cmartin The initial version.
+-->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+  <bean id="jasperDocumentGeneratorService"
+        class="com.dovetail.document.generator.jasper.adaptor.service.impl.LocalJasperDocumentGeneratorService">
+    <property name="eventHandler">
+      <bean class="com.dovetail.common.event.impl.BlockingEventHandler" />
+    </property>
+    <property name="stringUtil" ref="documentGeneratorStringUtil" />
+    <property name="exportHandlers">
+      <map>
+        <entry key="pdf" value-ref="jasperPdfExportHandler" />
+        <entry key="xml" value-ref="jasperXmlExportHandler" />
+        <entry key="html" value-ref="jasperHtmlExportHandler" />
+      </map>
+    </property>
+  </bean>
+</beans>
+
+
