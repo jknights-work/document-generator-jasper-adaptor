@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  File      : pom.xml
+  Author    : cmartin
+  Copyright : Martin Technical Consulting Limited Ltd (2018)
+  Created   : 21-Jan-2018
+
+  History
+    21-Jan-2018 cmartin The initial version.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+    
+  <parent>
+    <groupId>com.willow</groupId>
+    <artifactId>common-java-master</artifactId>
+    <version>1.0.0-RELEASE</version>
+  </parent>
+  <artifactId>document-generator-jasper-adaptor</artifactId>
+  <version>1.0.0-RELEASE</version>
+  <packaging>jar</packaging>
+
+  <name>Document Generator Jasper Adaptor [V1.0.0]</name>
+  <description>Provides an implementation of a Document Generator that uses Jasper to generate the document from the
+    document template.</description>
+
+  <properties>
+    <common-document-generator.version>1.0.0-RELEASE</common-document-generator.version>
+    <common-service.version>1.0.0-RELEASE</common-service.version>
+    <jasper.version>6.0.0</jasper.version>
+    <junit.version>4.11</junit.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <application-spring-adaptor.version>1.0.0-RELEASE</application-spring-adaptor.version>
+    <pdfbox.version>1.8.7</pdfbox.version>
+    <xalan.version>2.7.1</xalan.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.willow</groupId>
+      <artifactId>common-document-generator</artifactId>
+      <version>${common-document-generator.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.willow</groupId>
+      <artifactId>common-service</artifactId>
+      <version>${common-service.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.jasperreports</groupId>
+      <artifactId>jasperreports</artifactId>
+      <version>${jasper.version}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>com.willow</groupId>
+      <artifactId>application-spring-adaptor</artifactId>
+      <version>${application-spring-adaptor.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.pdfbox</groupId>
+      <artifactId>pdfbox</artifactId>
+      <version>${pdfbox.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>1.8.0</version>
+    </dependency>
+    <dependency>
+      <groupId>xalan</groupId>
+      <artifactId>xalan</artifactId>
+      <version>${xalan.version}</version>
+    </dependency>
+  </dependencies>
+</project>
